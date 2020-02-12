@@ -36,9 +36,9 @@ MonoBehaviour:
   - RespawnSpaceship
   - RPC_AddCharacter
   - RPC_CreatePlayer
-  - RPC_LoadedGameScene
-  - RPC_Shooting
   - RPC_GetTeam
+  - RPC_LoadedGameScene
   - RPC_SentTeam
+  - RPC_Shooting
   DisableAutoOpenWizard: 1
-  ShowSettings: 1
+  ShowSettings: 0
