@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController myCC;
     public float movementSpeed;
     public float rotationSpeed;
+    
 
     private void Start()
     {
@@ -18,16 +19,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (PV.IsMine)
+         BasicMovement();
+            BasicRotation();
+        /* if (PV.IsMine) //REPLACE BEFORE COMMITING
         {
             BasicMovement();
             BasicRotation();
-        }
+        } */
     }
     void BasicMovement()
     {
         if (Input.GetKey(KeyCode.W))
         {
+           
             myCC.Move(transform.forward * Time.deltaTime * movementSpeed);
         }
         if (Input.GetKey(KeyCode.A))
@@ -42,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         {
             myCC.Move(-transform.forward * Time.deltaTime * movementSpeed);//please pay attention to the negative sign in front of the transform.
         }
+
     }
 
     void BasicRotation()
