@@ -1,20 +1,27 @@
 ﻿using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     private PhotonView PV;
+<<<<<<< HEAD
     private CharacterController myCC;
     public float movementSpeed;
     public float rotationSpeed;
     
+=======
+    public float speed = 5f;
+    public float jumpForce = 10f;
+    private CharacterController _characterController;
+    private Vector3 _moveDirection;
+    private float _gravity = 20f;
+    private float _verticalVelocity;
+>>>>>>> acfdab510cc4a08febad949174d9a00df29641f3
 
     private void Start()
     {
         PV = GetComponent<PhotonView>();
-        myCC = GetComponent<CharacterController>();
+        _characterController = GetComponent<CharacterController>();
     }
 
     private void Update()
@@ -23,12 +30,18 @@ public class PlayerMovement : MonoBehaviour
             BasicRotation();
         /* if (PV.IsMine) //REPLACE BEFORE COMMITING
         {
+<<<<<<< HEAD
             BasicMovement();
             BasicRotation();
         } */
+=======
+            Movement();
+        }
+>>>>>>> acfdab510cc4a08febad949174d9a00df29641f3
     }
-    void BasicMovement()
+    private void Movement()
     {
+<<<<<<< HEAD
         if (Input.GetKey(KeyCode.W))
         {
            
@@ -39,20 +52,40 @@ public class PlayerMovement : MonoBehaviour
             myCC.Move(-transform.right * Time.deltaTime * movementSpeed);//please pay attention to the negative sign in front of the transform.
         }
         if (Input.GetKey(KeyCode.D))
-        {
-            myCC.Move(transform.right * Time.deltaTime * movementSpeed);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            myCC.Move(-transform.forward * Time.deltaTime * movementSpeed);//please pay attention to the negative sign in front of the transform.
-        }
+=======
+        _moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        _moveDirection = transform.TransformDirection(_moveDirection);
+        _moveDirection *= speed * Time.deltaTime;
 
+        ApplyGravity();
+
+        _characterController.Move(_moveDirection);
     }
 
-    void BasicRotation()
+    private void ApplyGravity()
     {
-        float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * rotationSpeed;
-        transform.Rotate(new Vector3(0, mouseX, 0));
+        if (_characterController.isGrounded)
+>>>>>>> acfdab510cc4a08febad949174d9a00df29641f3
+        {
+            _verticalVelocity -= _gravity * Time.deltaTime;
+            PlayerJump();
+        }
+        else
+        {
+            _verticalVelocity -= _gravity * Time.deltaTime;
+        }
 
+<<<<<<< HEAD
+=======
+        _moveDirection.y = _verticalVelocity * Time.deltaTime;
+>>>>>>> acfdab510cc4a08febad949174d9a00df29641f3
+    }
+
+    private void PlayerJump()
+    {
+        if (_characterController.isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+            _verticalVelocity = jumpForce;
+        }
     }
 }
