@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - Avatar
+  - Grenade
   layers:
   - Default
   - TransparentFX
