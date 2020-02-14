@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3f15c81f6e4af47a1380d32761fb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PV: {fileID: 0}
+  PV: {fileID: 4326933641087036878}
   _playerRoot: {fileID: 2242756537341969417}
   _lookRoot: {fileID: 991462040391735544}
   _invert: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   _sensivity: 5
   _smoothStep: 10
   _smoothWeight: 0.4
-  _rollAngle: 10
+  _rollAngle: 1
   _rollSpeed: 3
   _defaultLookLimits: {x: -70, y: 80}
 --- !u!1 &3188962899986881908
@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 7730830790016655384}
   - component: {fileID: 1469026139559721888}
   - component: {fileID: -8926122066875857851}
+  - component: {fileID: 5514656297172074228}
   m_Layer: 0
   m_Name: PlayerAvatar
   m_TagString: Avatar
@@ -348,8 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a62ea9863764a0499369f1ee83835bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
-  jumpForce: 10
+  speed: 4
+  jumpForce: 5
 --- !u!114 &1469026139559721888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,3 +383,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayOrigin: {fileID: 8293512115416150411}
   healthDisplay: {fileID: 0}
+--- !u!114 &5514656297172074228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4464354438043669691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3d2ac58ebb9474ab397d00a1881865, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprint_Speed: 8
+  move_Speed: 4
+  crouch_Speed: 1

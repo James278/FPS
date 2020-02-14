@@ -21,11 +21,6 @@ public class MouseLook : MonoBehaviour
     private float _currentRollAngle;
     private int _lasLookFrame;
 
-    private void Awake()
-    {
-        PV = GetComponentInParent<PhotonView>();
-    }
-
     private void Start()
     {
         if (PV.IsMine)
