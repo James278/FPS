@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System;
 
-public class Slot : MonoBehaviour
+public class Slot : MonoBehaviour, IPointerEnterHandler
 {
 
     //Variables
@@ -32,5 +34,22 @@ public class Slot : MonoBehaviour
             this.GetComponent<RawImage>().texture = slotTexture;
             empty = true;
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData){
+        print(this.gameObject.name);
+    }
+
+
+    public void onTriggerEnter(Collider other){
+        if(other.gameObject.CompareTag("Grenade")){
+            addItem(other.gameObject);
+        }
+    }
+
+    public void addItem(GameObject item)
+    {
+        GameObject rootItem;
+        rootItem = item.GetComponent<ItemPickUp>().rootItem;
     }
 }

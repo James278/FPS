@@ -23,6 +23,7 @@ public class PlayerPickUp : MonoBehaviour
         
     }
 
-
+    
     
 }
+//Destroy(other.gameObject);

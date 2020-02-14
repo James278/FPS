@@ -33,15 +33,18 @@ public class Iventory : MonoBehaviour
         }else {
             inventory.SetActive(false);
         }
+
+        //check for slots
+
+        
         
     }
 
-public void onTriggerEnter(Collider other){
-        if(other.tag == "Grenade"){
-            print(other.tag);
-        }else{
-            print("not hitting");
+void OnTriggerEnter(Collider other){
+        if(other.gameObject.CompareTag("Grenade")){
+            other.gameObject.SetActive(false);
         }
+        
     }
 
     
