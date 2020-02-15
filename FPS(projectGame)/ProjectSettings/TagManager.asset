@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bullet
   - Avatar
+  - Grenade
+  - slot
   layers:
   - Default
   - TransparentFX
