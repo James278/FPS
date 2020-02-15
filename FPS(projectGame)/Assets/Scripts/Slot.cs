@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-public class Slot : MonoBehaviour, IPointerEnterHandler
+public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler
 {
 
     //Variables
@@ -28,6 +28,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler
     {
         //change item texture if there is an item
         if(item){
+            itemTexture = item.GetComponent<Item>().itemTexture;
             this.GetComponent<RawImage>().texture = itemTexture;
             empty = false;
         }else{
@@ -37,19 +38,12 @@ public class Slot : MonoBehaviour, IPointerEnterHandler
     }
 
     public void OnPointerEnter(PointerEventData eventData){
-        print(this.gameObject.name);
+        
     }
-
-
-    public void onTriggerEnter(Collider other){
-        if(other.gameObject.CompareTag("Grenade")){
-            addItem(other.gameObject);
+    public void OnPointerDown(PointerEventData eventData){
+        if(item){
+            item.SetActive(true);
         }
     }
 
-    public void addItem(GameObject item)
-    {
-        GameObject rootItem;
-        rootItem = item.GetComponent<ItemPickUp>().rootItem;
-    }
 }

@@ -7,6 +7,7 @@ public class ItemPickUp : MonoBehaviour
 
     //Variables
     public GameObject rootItem;
+    public bool pickedUp;
 
     //functions
 

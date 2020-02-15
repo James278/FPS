@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    //variable    
+    public Texture itemTexture;
+    
+
+    //functions
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +18,8 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.F)){
+            this.gameObject.SetActive(false);
+        }
     }
 }
