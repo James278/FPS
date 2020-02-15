@@ -19,10 +19,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (PV.IsMine)
+        /*  BasicMovement();
+            BasicRotation(); */
+
+         /* if (PV.IsMine) //REPLACE BEFORE COMMITING
         {
             Movement();
-        }
+        } */
+        Movement();
     }
     private void Movement()
     {
