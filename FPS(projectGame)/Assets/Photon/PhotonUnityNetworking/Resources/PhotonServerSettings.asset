@@ -41,4 +41,4 @@ MonoBehaviour:
   - RPC_SentTeam
   - RPC_Shooting
   DisableAutoOpenWizard: 1
-  ShowSettings: 1
+  ShowSettings: 0
